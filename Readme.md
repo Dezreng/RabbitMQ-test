@@ -13,7 +13,7 @@ cd first-m
 npm i
 ```
 ```
-node index.js
+npm run start
 ```
 
 
@@ -25,7 +25,7 @@ cd second-m
 npm i
 ```
 ```
-node index.js
+npm run start
 ```
 
 - GET request to http://localhost:4001/multiplication
