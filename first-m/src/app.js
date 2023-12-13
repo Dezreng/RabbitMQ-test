@@ -11,7 +11,7 @@ app.use(express.json());
 app.post("/multiplication", async (req, res) => {
   const param = req.body.number;
   const task = { param };
-  console.log(typeof task.param);
+
   if (typeof task.param !== 'number') {
     res.status(500).json({ error: 'An error occurred' });
     return;
@@ -31,7 +31,7 @@ app.post("/multiplication", async (req, res) => {
 
     channel.consume(callbackQueue.queue, (msg) => {
       if (msg.properties.correlationId === correlationId) {
-        console.log(msg);
+        // console.log(msg);
         const result = JSON.parse(msg.content.toString());
         logger.debug(`Received result from RabbitMQ: ${JSON.stringify(result)}`);
         res.json({ result });
